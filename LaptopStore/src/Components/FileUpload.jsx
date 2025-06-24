@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { uploadFile, downloadFile } from "../app/api";
+import { Box } from "@mui/material";
 
 export default function FileUpload() {
   const [file, setFile] = useState(null);
@@ -39,17 +40,21 @@ export default function FileUpload() {
   };
 
   return (
-    <div>
+    <Box>
       <h2>File Upload/Download</h2>
       <form onSubmit={handleUpload}>
         <input type="file" onChange={handleChange} />
         <button type="submit">Upload</button>
       </form>
       <form onSubmit={handleDownload}>
-        <input value={filename} onChange={e => setFilename(e.target.value)} placeholder="Filename to download" />
+        <input
+          value={filename}
+          onChange={(e) => setFilename(e.target.value)}
+          placeholder="Filename to download"
+        />
         <button type="submit">Download</button>
       </form>
-      <div>{message}</div>
-    </div>
+      <Box>{message}</Box>
+    </Box>
   );
 }

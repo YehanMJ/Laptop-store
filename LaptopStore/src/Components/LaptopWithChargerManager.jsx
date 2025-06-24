@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { getLaptopsWithChargers, addLaptopWithChargers } from "../app/api";
+import { Box } from "@mui/material";
 
 export default function LaptopWithChargerManager() {
   const [list, setList] = useState([]);
@@ -28,7 +29,7 @@ export default function LaptopWithChargerManager() {
   };
 
   return (
-    <div>
+    <Box>
       <h2>Laptops with Chargers</h2>
       <form onSubmit={handleSubmit}>
         <input name="brand" value={form.brand} onChange={handleChange} placeholder="Brand" required />
@@ -44,6 +45,6 @@ export default function LaptopWithChargerManager() {
           </li>
         ))}
       </ul>
-    </div>
+    </Box>
   );
 }

@@ -16,6 +16,7 @@ import {
   TableRow,
   Paper,
   Button as MuiButton,
+  Box,
 } from "@mui/material";
 
 export default function LaptopManager() {
@@ -56,13 +57,13 @@ export default function LaptopManager() {
   };
 
   return (
-    <div style={{ display: 'flex', alignItems: 'flex-start', gap: '32px', width: '100%' }}>
-      <div style={{ flex: '0 0 400px', minWidth: 350, alignSelf: 'flex-start', marginTop: 32 }}>
+    <Box display="flex" alignItems="flex-start" gap={4} width="100%">
+      <Box flex="0 0 400px" minWidth={350} alignSelf="flex-start" mt={4}>
         <h2>Laptop Manager</h2>
         <AddLaptopForm onAdd={fetchLaptops} />
-      </div>
-      <div style={{ flex: 1, width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'flex-start', marginTop: 0 }}>
-        <div style={{ width: '100%' }}>
+      </Box>
+      <Box flex={1} width="100%" display="flex" flexDirection="column" alignItems="flex-start" mt={0}>
+        <Box width="100%">
           <TableContainer component={Paper} sx={{ mt: 0, width: '100%' }}>
             <Table sx={{ minWidth: 500, width: '100%' }}>
               <TableHead>
@@ -150,8 +151,8 @@ export default function LaptopManager() {
               </TableBody>
             </Table>
           </TableContainer>
-        </div>
-      </div>
-    </div>
+        </Box>
+      </Box>
+    </Box>
   );
 }

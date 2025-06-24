@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Box } from '@mui/material';
 
 const LaptopList = () => {
     const [laptops, setLaptops] = useState([]);
@@ -33,7 +34,7 @@ const LaptopList = () => {
     }
 
     return (
-        <div>
+        <Box>
             <h1>Laptop List</h1>
             <ul>
                 {laptops.map(laptop => (
@@ -42,7 +43,7 @@ const LaptopList = () => {
                     </li>
                 ))}
             </ul>
-        </div>
+        </Box>
     );
 };
 

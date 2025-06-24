@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Box } from '@mui/material';
 
 const LaptopDetails = ({ match }) => {
     const [laptop, setLaptop] = useState(null);
@@ -22,17 +23,17 @@ const LaptopDetails = ({ match }) => {
     }, [laptopId]);
 
     if (!laptop) {
-        return <div>Loading...</div>;
+        return <Box>Loading...</Box>;
     }
 
     return (
-        <div>
+        <Box>
             <h2>{laptop.name}</h2>
             <p><strong>Brand:</strong> {laptop.brand}</p>
             <p><strong>Price:</strong> ${laptop.price}</p>
             <p><strong>Description:</strong> {laptop.description}</p>
             <img src={laptop.imageUrl} alt={laptop.name} />
-        </div>
+        </Box>
     );
 };
 

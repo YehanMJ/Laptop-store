@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { registerUser, loginUser } from "../app/api";
+import { Box } from "@mui/material";
 
 export function Register({ onRegister }) {
   const [form, setForm] = useState({ username: "", password: "" });
@@ -21,13 +22,15 @@ export function Register({ onRegister }) {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <h2>Register</h2>
-      <input name="username" value={form.username} onChange={handleChange} placeholder="Username" required />
-      <input name="password" type="password" value={form.password} onChange={handleChange} placeholder="Password" required />
-      <button type="submit">Register</button>
-      <div>{msg}</div>
-    </form>
+    <Box>
+      <form onSubmit={handleSubmit}>
+        <h2>Register</h2>
+        <input name="username" value={form.username} onChange={handleChange} placeholder="Username" required />
+        <input name="password" type="password" value={form.password} onChange={handleChange} placeholder="Password" required />
+        <button type="submit">Register</button>
+        <Box>{msg}</Box>
+      </form>
+    </Box>
   );
 }
 
@@ -52,12 +55,14 @@ export function Login({ onLogin }) {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <h2>Login</h2>
-      <input name="username" value={form.username} onChange={handleChange} placeholder="Username" required />
-      <input name="password" type="password" value={form.password} onChange={handleChange} placeholder="Password" required />
-      <button type="submit">Login</button>
-      <div>{msg}</div>
-    </form>
+    <Box>
+      <form onSubmit={handleSubmit}>
+        <h2>Login</h2>
+        <input name="username" value={form.username} onChange={handleChange} placeholder="Username" required />
+        <input name="password" type="password" value={form.password} onChange={handleChange} placeholder="Password" required />
+        <button type="submit">Login</button>
+        <Box>{msg}</Box>
+      </form>
+    </Box>
   );
 }
